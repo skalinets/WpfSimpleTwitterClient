@@ -1,0 +1,19 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:Client"
+        Title="MainWindow" Height="426" Width="612">
+    <Window.DataContext>
+        <v:TweetsViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Right" Margin="0,12,12,0" Name="button1" Width="75" Height="23" VerticalAlignment="Top" Click="button1_Click" />
+        <ListBox Margin="10,41,12,12" Name="listBox1" ItemsSource="{Binding Path=Tweets}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <v:TweetView />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
